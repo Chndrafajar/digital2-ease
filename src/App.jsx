@@ -1,0 +1,132 @@
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import './index.scss';
+import './dashboard.scss';
+import { createBrowserRouter, Outlet, RouterProvider, useNavigate } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import NotFound from './pages/NotFound';
+import Product from './pages/Product';
+
+import BlogPages from './pages/BlogPages';
+import DetailPages from './pages/DetailPages';
+import MyInformation from './pages/dashboard user/MyInformation';
+import SaveProduct from './pages/dashboard user/SaveProduct';
+import Messages from './pages/dashboard user/Messages';
+import MessagesId from './pages/dashboard user/MessagesId';
+import ChangePassword from './pages/dashboard user/ChangePassword';
+import Purchases from './pages/dashboard user/Purchases';
+import TokoPages from './pages/tokopages/TokoPages';
+import TokoAbout from './pages/tokopages/TokoAbout';
+import About from './pages/company/About';
+import Privacy from './pages/company/Privacy';
+import TermsCondition from './pages/company/TermsCondition';
+import { useEffect, useState } from 'react';
+import LoadingBar from './components/LoadingBar';
+
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleRouteChange = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+  };
+
+  useEffect(() => {
+    handleRouteChange();
+  }, []);
+
+  const Layout = () => {
+    return (
+      <>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </>
+    );
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        {
+          path: '/',
+          element: <HomePage />,
+        },
+        {
+          path: '/404',
+          element: <NotFound />,
+        },
+        {
+          path: '/c/:slug',
+          element: <Product />,
+        },
+        {
+          path: '/blogs/:slug',
+          element: <BlogPages />,
+        },
+        {
+          path: '/about',
+          element: <About />,
+        },
+        {
+          path: '/privacy',
+          element: <Privacy />,
+        },
+        {
+          path: '/terms-condition',
+          element: <TermsCondition />,
+        },
+        {
+          path: '/detail/:slug',
+          element: <DetailPages />,
+        },
+        {
+          path: '/toko/:slug',
+          element: <TokoPages />,
+        },
+        {
+          path: '/toko/about',
+          element: <TokoAbout />,
+        },
+      ],
+    },
+    {
+      path: '/dashboard/my-information',
+      element: <MyInformation />,
+    },
+    {
+      path: '/dashboard/save-product',
+      element: <SaveProduct />,
+    },
+    {
+      path: '/dashboard/messages',
+      element: <Messages />,
+    },
+    {
+      path: '/dashboard/messages/:slug',
+      element: <MessagesId />,
+    },
+    {
+      path: '/dashboard/purchases',
+      element: <Purchases />,
+    },
+    {
+      path: '/dashboard/change-password',
+      element: <ChangePassword />,
+    },
+  ]);
+
+  return (
+    <div>
+      {isLoading && <LoadingBar />}
+
+      <RouterProvider router={router} />
+    </div>
+  );
+}
+
+export default App;
