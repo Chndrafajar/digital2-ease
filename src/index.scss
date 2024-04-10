@@ -2197,20 +2197,6 @@ body::-webkit-scrollbar {
   }
   .footer .container .row .col-lg-2 .new-letter .input-subscribe,
   .footer .container .row .col-lg-3 .new-letter .input-subscribe {
-    .input {
-      padding: 8px 10px;
-      font-size: 14px;
-    }
-    button {
-      padding: 8px 10px;
-      font-size: 14px;
-    }
-  }
-}
-
-@media only screen and (max-width: 335px) {
-  .footer .container .row .col-lg-2 .new-letter .input-subscribe,
-  .footer .container .row .col-lg-3 .new-letter .input-subscribe {
     flex-direction: column;
     gap: 15px;
   }
