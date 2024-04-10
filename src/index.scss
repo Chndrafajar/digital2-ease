@@ -340,6 +340,41 @@ body::-webkit-scrollbar {
   }
 }
 
+.accordion-button:focus {
+  border: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #0f486c;
+}
+
+.accordion-button {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.accordion-sub-menu {
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  li {
+    padding-bottom: 8px;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    span {
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: #0f486c;
+      transition: all 0.2s ease-in;
+      cursor: pointer;
+    }
+  }
+}
+
 .link-sub {
   position: fixed;
   z-index: 999;
@@ -2038,6 +2073,11 @@ body::-webkit-scrollbar {
     input {
       width: 200px;
     }
+  }
+  .footer .copyright .container {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
   }
 }
 

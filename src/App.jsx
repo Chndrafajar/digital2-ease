@@ -2,7 +2,7 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import './index.scss';
 import './dashboard.scss';
-import { createBrowserRouter, Outlet, RouterProvider, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
 import Product from './pages/Product';
@@ -25,6 +25,7 @@ import LoadingBar from './components/LoadingBar';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
   const handleRouteChange = () => {
     setIsLoading(true);
@@ -35,97 +36,33 @@ function App() {
 
   useEffect(() => {
     handleRouteChange();
-  }, []);
-
-  const Layout = () => {
-    return (
-      <>
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </>
-    );
-  };
-
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <Layout />,
-      children: [
-        {
-          path: '/',
-          element: <HomePage />,
-        },
-        {
-          path: '/404',
-          element: <NotFound />,
-        },
-        {
-          path: '/c/:slug',
-          element: <Product />,
-        },
-        {
-          path: '/blogs/:slug',
-          element: <BlogPages />,
-        },
-        {
-          path: '/about',
-          element: <About />,
-        },
-        {
-          path: '/privacy',
-          element: <Privacy />,
-        },
-        {
-          path: '/terms-condition',
-          element: <TermsCondition />,
-        },
-        {
-          path: '/detail/:slug',
-          element: <DetailPages />,
-        },
-        {
-          path: '/toko/:slug',
-          element: <TokoPages />,
-        },
-        {
-          path: '/toko/about',
-          element: <TokoAbout />,
-        },
-      ],
-    },
-    {
-      path: '/dashboard/my-information',
-      element: <MyInformation />,
-    },
-    {
-      path: '/dashboard/save-product',
-      element: <SaveProduct />,
-    },
-    {
-      path: '/dashboard/messages',
-      element: <Messages />,
-    },
-    {
-      path: '/dashboard/messages/:slug',
-      element: <MessagesId />,
-    },
-    {
-      path: '/dashboard/purchases',
-      element: <Purchases />,
-    },
-    {
-      path: '/dashboard/change-password',
-      element: <ChangePassword />,
-    },
-  ]);
-
+  }, [location]);
   return (
-    <div>
+    <>
       {isLoading && <LoadingBar />}
-
-      <RouterProvider router={router} />
-    </div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/c/:slug" element={<Product />} />
+        <Route path="/blogs/:slug" element={<BlogPages />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms-condition" element={<TermsCondition />} />
+        <Route path="/detail/:slug" element={<DetailPages />} />
+        <Route path="/toko/:slug" element={<TokoPages />} />
+        <Route path="/toko/about" element={<TokoAbout />} />
+        <Route path="/toko/about" element={<TokoAbout />} />
+        {/* dashboard  */}
+        <Route path="/dashboard/my-information" element={<MyInformation />} />
+        <Route path="/dashboard/save-product" element={<SaveProduct />} />
+        <Route path="/dashboard/messages" element={<Messages />} />
+        <Route path="/dashboard/messages/:slug" element={<MessagesId />} />
+        <Route path="/dashboard/purchases" element={<Purchases />} />
+        <Route path="/dashboard/change-password" element={<ChangePassword />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
