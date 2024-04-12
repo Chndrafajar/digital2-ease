@@ -12,11 +12,11 @@ const JoinShop = () => {
               <p>Sell your digital product designs and reach millions of buyers or promote let's be a part of us.</p>
 
               <button className="btn-open-shop" data-bs-toggle="modal" data-bs-target="#signupmodal">
-                Start Open a Shop <FiArrowRight />
+                Join Now <FiArrowRight />
               </button>
             </div>
             <div className="col-md-6">
-              <img src="/images/join-new.png" alt="" />
+              <img src="/images/join.png" alt="" />
             </div>
           </div>
         </div>

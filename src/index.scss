@@ -266,16 +266,61 @@ body::-webkit-scrollbar {
   font-weight: 500;
 }
 
+.nav-top {
+  background-color: #0f486c;
+  padding: 10px 0px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+
+  .container {
+    .items {
+      display: flex;
+      justify-content: space-between;
+      .icons-items {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        gap: 10px;
+        cursor: pointer;
+        color: #fff;
+      }
+      .money-auth {
+        display: flex;
+        gap: 20px;
+        .dropdown {
+          .dropdown-toggle {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+          }
+          .dropdown-menu {
+            color: #000;
+          }
+        }
+        .link-auth {
+          color: #fff;
+          font-size: 14px;
+          display: flex;
+          gap: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
 .navbar {
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1) !important;
   height: 140px;
   padding: 20px 0px;
   background-color: #fff;
-  position: fixed;
   display: flex;
   align-items: center;
-  z-index: 999;
-  top: 0;
+  z-index: 998;
+  position: fixed;
+  top: 42px;
   width: 100%;
 
   .navbar-items {
@@ -381,7 +426,7 @@ body::-webkit-scrollbar {
   width: 100%;
   z-index: 999;
   display: none;
-  margin-top: -31px;
+  margin-top: -30px;
   transition: all 0.4s ease-in-out;
 
   .container {
@@ -520,7 +565,7 @@ body::-webkit-scrollbar {
   padding: 8px 20px;
   border-radius: 30px;
   margin-left: 30px;
-  width: 75%;
+  width: 69%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -582,7 +627,7 @@ body::-webkit-scrollbar {
 }
 
 .Popular {
-  margin-top: 170px;
+  margin-top: 210px;
   .container {
     .row {
       .title {
@@ -1917,7 +1962,7 @@ body::-webkit-scrollbar {
     right: 43%;
   }
   .collapse .searchInput {
-    width: 70%;
+    width: 63%;
   }
   .navbar .navbar-items .menu {
     padding-left: 130px;
@@ -1937,7 +1982,7 @@ body::-webkit-scrollbar {
     font-size: 53px;
   }
   .collapse .searchInput {
-    width: 530px;
+    width: 450px;
 
     input {
       width: 400px;
@@ -1979,11 +2024,9 @@ body::-webkit-scrollbar {
   .detailPages {
     margin-top: 90px;
   }
-  .navbar {
-    top: -4px;
-  }
+
   .Popular {
-    margin-top: 90px;
+    margin-top: 130px;
   }
 
   .navbar .navbar-items .container .navbar-brand img {
@@ -2023,7 +2066,7 @@ body::-webkit-scrollbar {
     gap: 5px;
   }
   .searchInput {
-    width: 450px;
+    width: 410px;
     input {
       width: 200px;
     }
@@ -2068,10 +2111,16 @@ body::-webkit-scrollbar {
   .menubars {
     display: block;
   }
+
+  .searchMenu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
   .searchInput {
-    width: 300px;
+    width: 100%;
     input {
-      width: 200px;
+      width: 90%;
     }
   }
   .footer .copyright .container {
@@ -2195,6 +2244,20 @@ body::-webkit-scrollbar {
   form .titlePertanyaan h5 {
     font-size: 16px;
   }
+  .footer .container .row .col-lg-2 .new-letter .input-subscribe,
+  .footer .container .row .col-lg-3 .new-letter .input-subscribe {
+    .input {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+    button {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 335px) {
   .footer .container .row .col-lg-2 .new-letter .input-subscribe,
   .footer .container .row .col-lg-3 .new-letter .input-subscribe {
     flex-direction: column;

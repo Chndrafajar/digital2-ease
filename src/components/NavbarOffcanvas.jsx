@@ -349,7 +349,7 @@ const NavbarOffcanvas = () => {
                 Login
               </button>
               <button className="signup" data-bs-toggle="modal" data-bs-target="#signupmodal">
-                Sign Up
+                Start Open a Shop
               </button>
             </div>
             <FaCartArrowDown />

@@ -1,11 +1,7 @@
 import React from 'react';
 
 const NotFound = () => {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-      <h1>Not Found</h1>
-    </div>
-  );
+  return <div>NotFound</div>;
 };
 
 export default NotFound;

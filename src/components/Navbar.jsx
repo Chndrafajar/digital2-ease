@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { BiSearch } from 'react-icons/bi';
-import { FaCartArrowDown } from 'react-icons/fa';
+import { FaCartArrowDown, FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaTwitter } from 'react-icons/fa';
 import { HiMiniBars3 } from 'react-icons/hi2';
 
 import SignUpModal from './auth/SignUpModal';
@@ -25,7 +25,53 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar  navbar-expand-lg ">
+      <div className="nav-top">
+        <div className="container">
+          <div className="items">
+            <div className="icons-items">
+              <FaInstagram />
+              <FaFacebook />
+              <FaLinkedin />
+              <FaTwitter />
+              <FaPinterest />
+            </div>
+            <div className="money-auth">
+              <div className="dropdown">
+                <a className="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  USD ($)
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      EUR (e)
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      IDR (Rp)
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      USD ($)
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="link-auth">
+                <a data-bs-toggle="modal" data-bs-target="#loginmodal">
+                  Login
+                </a>
+                /
+                <a data-bs-toggle="modal" data-bs-target="#loginmodal">
+                  Register
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav className="navbar navbar-expand-lg ">
         <div className="navbar-items">
           <div className="container">
             <NavLink className="navbar-brand">
@@ -45,7 +91,7 @@ const Navbar = () => {
                     Login
                   </button>
                   <button className="signup" data-bs-toggle="modal" data-bs-target="#signupmodal">
-                    Sign Up
+                    Start Open a Shop
                   </button>
                 </div>
                 <FaCartArrowDown />
