@@ -52,7 +52,6 @@ function App() {
         <Route path="/detail/:slug" element={<DetailPages />} />
         <Route path="/toko/:slug" element={<TokoPages />} />
         <Route path="/toko/about" element={<TokoAbout />} />
-        <Route path="/toko/about" element={<TokoAbout />} />
         {/* dashboard  */}
         <Route path="/dashboard/my-information" element={<MyInformation />} />
         <Route path="/dashboard/save-product" element={<SaveProduct />} />

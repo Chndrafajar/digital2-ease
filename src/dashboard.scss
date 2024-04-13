@@ -21,6 +21,7 @@
 
 .itemsContent {
   min-height: 80vh;
+  margin-top: 130px;
   padding: 10px 20px;
 
   h2 {
@@ -482,6 +483,9 @@
   }
   .itemsContent .purchases .itemPurchases {
     gap: 20px;
+  }
+  .itemsContent {
+    margin-top: 40px;
   }
 }
 

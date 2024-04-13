@@ -1,5 +1,5 @@
 .about {
-  margin-top: 170px;
+  margin-top: 210px;
 
   .container {
     .row {
@@ -51,7 +51,7 @@
 }
 
 .privacy {
-  margin-top: 170px;
+  margin-top: 210px;
   .container {
     .row {
       .title {
@@ -93,7 +93,7 @@
 }
 
 .termsCondition {
-  margin-top: 170px;
+  margin-top: 210px;
   .container {
     .row {
       .title {
@@ -136,7 +136,7 @@
 
 @media only screen and (max-width: 991px) {
   .about {
-    margin-top: 120px;
+    margin-top: 140px;
   }
   .about .container .row .title .titleItems {
     width: 100%;
@@ -145,10 +145,10 @@
     font-size: 38px;
   }
   .privacy {
-    margin-top: 120px;
+    margin-top: 140px;
   }
   .termsCondition {
-    margin-top: 120px;
+    margin-top: 140px;
   }
 }
 
