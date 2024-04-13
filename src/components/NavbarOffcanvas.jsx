@@ -345,9 +345,6 @@ const NavbarOffcanvas = () => {
           </div>
           <div className="menuNav">
             <div className="menuItems">
-              <button className="login" data-bs-toggle="modal" data-bs-target="#loginmodal">
-                Login
-              </button>
               <button className="signup" data-bs-toggle="modal" data-bs-target="#signupmodal">
                 Start Open a Shop
               </button>
