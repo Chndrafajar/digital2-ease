@@ -15,7 +15,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Keyboard, Scrollbar, Navigation, Pagination } from 'swiper/modules';
 
 import { NavLink } from 'react-router-dom';
-import { FaCartArrowDown } from 'react-icons/fa';
+import { FaCartArrowDown, FaEye, FaHeart } from 'react-icons/fa';
+import { FaMessage } from 'react-icons/fa6';
 
 const DetailPages = () => {
   return (
@@ -163,6 +164,20 @@ const DetailPages = () => {
                   <h6>
                     {detailPages.detail.categories} / {detailPages.detail.subCategories}
                   </h6>
+                </div>
+                <div className="info">
+                  <h5>Info</h5>
+                  <div className="icons-item">
+                    <div className="icons-info">
+                      <FaEye /> 12
+                    </div>
+                    <div className="icons-info">
+                      <FaHeart /> 2
+                    </div>
+                    <div className="icons-info">
+                      <FaMessage /> 3
+                    </div>
+                  </div>
                 </div>
               </div>
               <h5>Shop Owner </h5>

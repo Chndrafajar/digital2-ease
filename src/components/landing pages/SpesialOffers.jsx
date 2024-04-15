@@ -75,7 +75,7 @@ const SpesialOffers = () => {
           modules={[Keyboard, Scrollbar, Navigation, Pagination]}
           className="mySwiper"
         >
-          {Produk?.produk?.slice(0, 4).map((f) => (
+          {Produk?.produk?.slice(0, 8).map((f) => (
             <SwiperSlide>
               <div className="card-popular" key={f.id}>
                 <div className="itemsProfil">

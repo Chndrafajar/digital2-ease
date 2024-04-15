@@ -6,7 +6,7 @@
 .col-lg-4,
 .col-xxl-3,
 .col-12 {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   .card {
     border: none;
     border: 10px;
@@ -427,7 +427,7 @@ body::-webkit-scrollbar {
   width: 100%;
   z-index: 999;
   display: none;
-  margin-top: -30px;
+  top: 180px;
   transition: all 0.4s ease-in-out;
 
   .container {
@@ -625,26 +625,28 @@ body::-webkit-scrollbar {
 }
 
 .banner-product {
-  margin-top: 210px;
+  margin-top: 218px;
+  margin-bottom: 25px;
 
   .container {
     .row {
-      .col-12 {
+      .col-lg-12 {
         .card {
           border: none;
           background: linear-gradient(to right, #0f486c, #3b8cb3);
           padding: 100px 40px;
-          border-radius: 20px;
+          border-radius: 10px;
           overflow: hidden;
 
           .items {
             display: flex;
             justify-content: space-between;
             .desc {
-              z-index: 999;
+              text-align: left;
               span {
                 font-size: 28px;
-                color: #899298;
+                color: #fff;
+                font-weight: 300;
                 line-height: 28px;
               }
               h1 {
@@ -671,7 +673,7 @@ body::-webkit-scrollbar {
               right: 40px;
               top: 25px;
               z-index: 0;
-              border-radius: 20px;
+              border-radius: 10px;
             }
           }
         }
@@ -1001,9 +1003,41 @@ body::-webkit-scrollbar {
   font-weight: 600;
   border-radius: 5px;
 }
-.newRelease,
+.featureProduct,
 .staffPicks {
-  margin-top: 10px;
+  margin-top: 20px;
+  .container {
+    .row {
+      .title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        h2 {
+          color: #000;
+          font-size: 27px;
+          font-style: normal;
+          font-weight: 600;
+          margin-bottom: 20px;
+          letter-spacing: 1.2px;
+        }
+
+        a {
+          color: #0f486c;
+          text-align: center;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+//new arrivals
+.newArrivals {
+  margin-top: 5px;
   .container {
     .row {
       .title {
@@ -1421,6 +1455,8 @@ body::-webkit-scrollbar {
               font-style: normal;
               font-weight: 600;
               line-height: normal;
+              margin-top: 0px;
+              margin-bottom: 0px;
             }
 
             .items {
@@ -1434,7 +1470,7 @@ body::-webkit-scrollbar {
                 align-items: center;
                 justify-content: center;
                 svg {
-                  font-size: 18px;
+                  font-size: 17px;
                   color: orange;
                   gap: 2px;
                 }
@@ -1445,7 +1481,7 @@ body::-webkit-scrollbar {
                 justify-content: center;
                 span {
                   color: #000;
-                  font-size: 17px;
+                  font-size: 15px;
                   font-style: normal;
                   font-weight: 400;
                   line-height: normal;
@@ -1456,7 +1492,7 @@ body::-webkit-scrollbar {
           .categories {
             display: flex;
             justify-content: space-between;
-
+            margin-top: 10px;
             align-items: baseline;
 
             h5 {
@@ -1465,6 +1501,8 @@ body::-webkit-scrollbar {
               font-style: normal;
               font-weight: 600;
               line-height: normal;
+              margin-top: 0px;
+              margin-bottom: 0px;
             }
             h6 {
               color: #000;
@@ -1472,6 +1510,35 @@ body::-webkit-scrollbar {
               font-style: normal;
               font-weight: 400;
               line-height: normal;
+              margin-top: 0px;
+              margin-bottom: 0px;
+            }
+          }
+          .info {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h5 {
+              margin-bottom: 0px;
+              margin-top: 0px;
+              color: #000;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+            }
+
+            .icons-item {
+              gap: 10px;
+              display: flex;
+
+              .icons-info {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+                font-size: 15px;
+              }
             }
           }
         }
@@ -1887,6 +1954,27 @@ body::-webkit-scrollbar {
   }
 }
 // akhir Blogs
+
+// notfound
+.notfound {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      text-align: center;
+    }
+  }
+}
+// notfound
+
 // footer
 .footer {
   background-color: #eef0f5;
@@ -2080,10 +2168,10 @@ body::-webkit-scrollbar {
   }
 
   .Popular {
-    margin-top: 0px;
+    margin-top: 10px;
   }
   .banner-product {
-    margin-top: 150px;
+    margin-top: 155px;
   }
 
   .navbar .navbar-items .container .navbar-brand img {
@@ -2129,6 +2217,9 @@ body::-webkit-scrollbar {
       width: 90%;
     }
   }
+  .banner-product .container .row .col-lg-12 .card .items .desc {
+    z-index: 1;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -2170,7 +2261,7 @@ body::-webkit-scrollbar {
     display: block;
   }
 
-  .banner-product .container .row .col-12 .card {
+  .banner-product .container .row .col-lg-12 .card {
     padding: 80px 25px;
     .items {
       .desc {
@@ -2315,7 +2406,7 @@ body::-webkit-scrollbar {
 }
 
 @media only screen and (max-width: 465px) {
-  .banner-product .container .row .col-12 .card {
+  .banner-product .container .row .col-lg-12 .card {
     padding: 80px 25px;
     .items {
       .desc {
@@ -2342,8 +2433,8 @@ body::-webkit-scrollbar {
 }
 @media only screen and (max-width: 400px) {
   .banner-product {
-    margin-top: 140px;
-    .container .row .col-12 .card {
+    margin-top: 150px;
+    .container .row .col-lg-12 .card {
       padding: 50px 25px;
       .items {
         .desc {

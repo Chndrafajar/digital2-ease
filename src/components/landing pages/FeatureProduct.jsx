@@ -8,7 +8,7 @@ import { FaCartArrowDown } from 'react-icons/fa';
 const FeatureProduct = () => {
   return (
     <>
-      <div className="newRelease">
+      <div className="featureProduct">
         <div className="container">
           <div className="row">
             <div className="title">
@@ -19,7 +19,7 @@ const FeatureProduct = () => {
             </div>
           </div>
           <div className="row">
-            {Produk?.produk.slice(0, 8).map((p) => (
+            {Produk?.produk.slice(0, 4).map((p) => (
               <div className="col-sm-6 col-xl-3 col-lg-4 col-12" key={p.id}>
                 <NavLink to={`/detail/${p.slug}`} className="link">
                   <div className="card">

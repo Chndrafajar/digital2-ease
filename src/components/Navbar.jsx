@@ -63,7 +63,7 @@ const Navbar = () => {
                   Login
                 </a>
                 /
-                <a data-bs-toggle="modal" data-bs-target="#loginmodal">
+                <a data-bs-toggle="modal" data-bs-target="#signupmodal">
                   Register
                 </a>
               </div>
@@ -74,7 +74,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg ">
         <div className="navbar-items">
           <div className="container">
-            <NavLink className="navbar-brand">
+            <NavLink className="navbar-brand" to="/">
               <img src="/logo/logo-nav.png" alt="" />
             </NavLink>
             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">

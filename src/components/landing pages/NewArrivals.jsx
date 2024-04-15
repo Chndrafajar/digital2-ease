@@ -8,7 +8,7 @@ import { FaCartArrowDown } from 'react-icons/fa';
 const NewArrivals = () => {
   return (
     <>
-      <div className="newRelease">
+      <div className="newArrivals">
         <div className="container">
           <div className="row">
             <div className="title">
