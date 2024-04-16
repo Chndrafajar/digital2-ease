@@ -23,6 +23,7 @@ import TermsCondition from './pages/company/TermsCondition';
 import { useEffect, useState } from 'react';
 import LoadingBar from './components/LoadingBar';
 import { IoIosArrowUp } from 'react-icons/io';
+import CartPages from './pages/dashboard user/CartPages';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -72,6 +73,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/cart" element={<CartPages />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/c/:slug" element={<Product />} />
         <Route path="/blogs/:slug" element={<BlogPages />} />

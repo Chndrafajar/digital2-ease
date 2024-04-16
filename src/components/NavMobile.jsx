@@ -8,13 +8,13 @@ const NavMobile = () => {
     <nav className="mobile">
       <ul>
         <li>
-          <NavLink className="link">
+          <NavLink to="/" className="link">
             <FaHome />
           </NavLink>
         </li>
 
         <li>
-          <NavLink className="link">
+          <NavLink to="/cart" className="link">
             <FaCartArrowDown />
           </NavLink>
         </li>

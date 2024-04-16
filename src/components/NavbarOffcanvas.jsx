@@ -355,7 +355,9 @@ const NavbarOffcanvas = () => {
                 Start Open a Shop
               </button>
             </div>
-            <FaCartArrowDown />
+            <NavLink to="/cart" className="link">
+              <FaCartArrowDown />
+            </NavLink>
           </div>
         </div>
       </div>
