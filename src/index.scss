@@ -2341,8 +2341,10 @@ body::-webkit-scrollbar {
     align-items: baseline;
     gap: 20px;
     margin-top: 20px;
+    padding: 0px 20px;
   }
   .searchInput {
+    margin-left: 0px;
     width: 60%;
     input {
       width: 90%;
@@ -2503,7 +2505,7 @@ body::-webkit-scrollbar {
     display: none;
   }
   .searchInput {
-    width: 85%;
+    width: 100%;
     input {
       width: 80%;
     }
@@ -2528,7 +2530,7 @@ body::-webkit-scrollbar {
   }
 
   .searchInput {
-    width: 90%;
+    width: 100%;
     margin-left: 0px;
     input {
       width: 50%;
