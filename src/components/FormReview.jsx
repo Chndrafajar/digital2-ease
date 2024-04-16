@@ -7,7 +7,7 @@ export default function FormReview() {
         <h3>Add Comment Reveiw </h3>
         <form action="">
           <div className="inputStyle" style={{ gap: '10px' }}>
-            <textarea placeholder="write a message..." className="formInput" id="message" rows={8} defaultValue={''} />
+            <textarea placeholder="write a comment..." className="formInput" id="message" rows={8} defaultValue={''} />
           </div>
           <button type="button" className="btn" style={{ background: '#0f486c', color: '#fff', width: '120px' }}>
             Submit
