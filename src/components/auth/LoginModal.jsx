@@ -13,7 +13,7 @@ const LoginModal = () => {
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
           </div>
           <div className="modal-body signupModal">
-            <h3 className="titleSignin">Login to Digital2 Ease</h3>
+            <h3 className="titleSignin">Login to Digital2Ease</h3>
             <form action="">
               <div className="inputStyle">
                 <input type="text" placeholder="Username" className="formInput" />

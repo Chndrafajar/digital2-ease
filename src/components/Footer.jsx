@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-4">
             <img src="/logo/logo-nav.png" alt="" className="logo" />
-            <p>Digital2 Ease is and digital marketplace platform solution for who want to sell digital goods for easy</p>
+            <p>Digital2Ease is and digital marketplace platform solution for who want to sell digital goods for easy</p>
             <div className="sosialIcons">
               <img src="/icons/ig.svg" alt="" />
               <img src="/icons/facebook.svg" alt="" />
