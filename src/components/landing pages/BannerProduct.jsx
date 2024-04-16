@@ -10,7 +10,7 @@ export default function BannerProduct() {
           <div className="row">
             <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner">
-                <div className="carousel-item active">
+                <div className="carousel-item active" data-bs-interval="10000">
                   <div className="col-lg-12">
                     <div className="card">
                       <div className="items">
@@ -27,7 +27,7 @@ export default function BannerProduct() {
                   </div>
                   {/* <img src="..." className="d-block w-100" alt="..." /> */}
                 </div>
-                <div className="carousel-item">
+                <div className="carousel-item" data-bs-interval="10000">
                   <div className="col-lg-12">
                     <div className="card">
                       <div className="items">
@@ -44,7 +44,7 @@ export default function BannerProduct() {
                   </div>
                   {/* <img src="..." className="d-block w-100" alt="..." /> */}
                 </div>
-                <div className="carousel-item">
+                <div className="carousel-item" data-bs-interval="10000">
                   <div className="col-lg-12">
                     <div className="card">
                       <div className="items">

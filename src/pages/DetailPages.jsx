@@ -17,6 +17,8 @@ import { Keyboard, Scrollbar, Navigation, Pagination } from 'swiper/modules';
 import { NavLink } from 'react-router-dom';
 import { FaCartArrowDown, FaEye, FaHeart } from 'react-icons/fa';
 import { FaMessage } from 'react-icons/fa6';
+import MessageModal from '../components/MessageModal';
+import FormReview from '../components/FormReview';
 
 const DetailPages = () => {
   return (
@@ -181,7 +183,7 @@ const DetailPages = () => {
                 </div>
               </div>
               <h5>Shop Owner </h5>
-              <NavLink to="/toko/about" className="card link userCard ">
+              <div className="card link userCard ">
                 <img src={detailPages.user.imgToko} alt="" />
                 <h6>{detailPages.user.nameToko}</h6>
                 <p>{detailPages.user.descToko}</p>
@@ -189,9 +191,11 @@ const DetailPages = () => {
                   <button className="fol">
                     <AiOutlinePlus /> Follow
                   </button>
-                  <button className="mes">Message</button>
+                  <button className="mes" data-bs-toggle="modal" data-bs-target="#messageModal">
+                    Message
+                  </button>
                 </div>
-              </NavLink>
+              </div>
             </div>
           </div>
           <div className="row mt-5">
@@ -253,7 +257,8 @@ const DetailPages = () => {
           </div>
           <hr />
           <div className="row">
-            <h3>{detailPages.detail.starNumber} Review</h3>
+            <h3 style={{ marginBottom: '0px' }}>{detailPages.detail.starNumber} Review</h3>
+
             {detailPages.reviews.map((r) => (
               <div className="col-md-12">
                 <div className="info">
@@ -274,6 +279,8 @@ const DetailPages = () => {
               </div>
             ))}
           </div>
+          <hr />
+          <FormReview />
         </div>
         {/* Modal */}
         <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -306,6 +313,8 @@ const DetailPages = () => {
           </div>
         </div>
       </div>
+
+      <MessageModal />
     </>
   );
 };

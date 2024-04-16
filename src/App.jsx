@@ -22,10 +22,39 @@ import Privacy from './pages/company/Privacy';
 import TermsCondition from './pages/company/TermsCondition';
 import { useEffect, useState } from 'react';
 import LoadingBar from './components/LoadingBar';
+import { IoIosArrowUp } from 'react-icons/io';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Fungsi untuk mendeteksi posisi scroll
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  // Fungsi untuk kembali ke atas halaman
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  // Menggunakan useEffect untuk menambahkan event listener ke window
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisibility);
+
+    // Membersihkan event listener ketika komponen di-unmount
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+    };
+  }, []);
 
   const handleRouteChange = () => {
     setIsLoading(true);
@@ -60,6 +89,11 @@ function App() {
         <Route path="/dashboard/purchases" element={<Purchases />} />
         <Route path="/dashboard/change-password" element={<ChangePassword />} />
       </Routes>
+      {isVisible && (
+        <button className="btn-top-down" onClick={scrollToTop}>
+          <IoIosArrowUp />
+        </button>
+      )}
       <Footer />
     </>
   );

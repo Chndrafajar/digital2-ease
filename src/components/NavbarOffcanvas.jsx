@@ -340,6 +340,12 @@ const NavbarOffcanvas = () => {
 
         <div className="searchMenu">
           <div className="searchInput">
+            <select name="" id="" className="select-category">
+              <option value="">All Category</option>
+              <option value="">Fonts</option>
+              <option value="">HTML5</option>
+              <option value="">Wordpress</option>
+            </select>
             <input type="text" placeholder="search milions fonts" />
             <BiSearch />
           </div>

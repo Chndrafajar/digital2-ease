@@ -187,6 +187,22 @@
   height: 100vh;
 }
 
+.btn-top-down {
+  z-index: 998;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 40px;
+  border: none;
+  height: 40px;
+  background-color: #0f486c;
+  color: #fff;
+  border-radius: 50%;
+  svg {
+    font-size: 25px;
+  }
+}
+
 .navbar-toggler {
   border: none;
   svg {
@@ -569,7 +585,17 @@ body::-webkit-scrollbar {
   width: 75%;
   display: flex;
   align-items: center;
+  gap: 10px;
   justify-content: space-between;
+
+  select {
+    border: none;
+    background-color: inherit;
+    color: #0008;
+    outline: none;
+    font-size: 15px;
+    cursor: pointer;
+  }
 
   input {
     border: none;
@@ -2301,6 +2327,10 @@ body::-webkit-scrollbar {
 @media only screen and (max-width: 576px) {
   .footer .container {
     padding: 50px 20px;
+  }
+  .btn-top-down {
+    bottom: 80px;
+    right: 20px;
   }
 
   .signin .container .row .col-lg-5 .formSignin .titlePertanyaan h5 {
