@@ -2528,10 +2528,10 @@ body::-webkit-scrollbar {
   }
 
   .searchInput {
-    width: 310px;
-
+    width: 90%;
+    margin-left: 0px;
     input {
-      width: 230px;
+      width: 50%;
     }
   }
   .Popular .container .row .col-sm-6 .card .card-body .name h5,
