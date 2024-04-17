@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
-import { tokoPages } from '../../data';
+import { tokoPages, Produk } from '../../data';
 import { NavLink } from 'react-router-dom';
 import { BiSolidStar } from 'react-icons/bi';
 import { FaCartArrowDown } from 'react-icons/fa';
@@ -55,7 +55,7 @@ const TokoPages = () => {
           </div>
         </div>
         <div className="row">
-          {tokoPages?.produkToko.map((p) => (
+          {Produk?.produk.slice(0, 8).map((p) => (
             <div className="col-sm-6 col-xl-3 col-lg-4 col-12" key={p.id}>
               <div className="card">
                 <div className="itemsProfil">
@@ -96,7 +96,7 @@ const TokoPages = () => {
                       </div>
                     </div>
                     <div className="btnDemo">
-                      <NavLink to="/detail/123" className="link">
+                      <NavLink to={`/detail/${p.id}`} className="link">
                         <button>
                           <FaCartArrowDown />
                         </button>

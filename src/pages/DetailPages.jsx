@@ -189,9 +189,9 @@ const DetailPages = () => {
                 <h6>{detailPages.user.nameToko}</h6>
                 <p>{detailPages.user.descToko}</p>
                 <div style={{ display: 'flex', gap: '30px' }}>
-                  <button className="fol">
+                  <NavLink to="/toko/nestype" className="fol link">
                     <AiOutlinePlus /> Follow
-                  </button>
+                  </NavLink>
                   <button className="mes" data-bs-toggle="modal" data-bs-target="#messageModal">
                     Message
                   </button>
@@ -203,7 +203,7 @@ const DetailPages = () => {
             <h3>
               Stay With <span>{detailPages?.user?.nameToko}</span>
             </h3>
-            {detailPages?.produkToko.map((p) => (
+            {Produk?.produk.slice(0, 4).map((p) => (
               <div className="col-sm-6 col-xl-3 col-lg-4 col-12" key={p.id}>
                 <div className="card">
                   <div className="itemsProfil">
@@ -244,7 +244,7 @@ const DetailPages = () => {
                         </div>
                       </div>
                       <div className="btnDemo">
-                        <NavLink to="/detail/123" className="link">
+                        <NavLink to={`/detail/${p.id}`} className="link">
                           <button>
                             <FaCartArrowDown />
                           </button>
@@ -283,9 +283,9 @@ const DetailPages = () => {
             <hr className="garis-produk" />
             <div className="col-lg-4 ">
               <div className="detail-product">
-                {Produk?.produk.slice(0, 4).map((p) => (
+                {Produk?.produk.slice(1, 4).map((p) => (
                   <div className="card-detail-product" key={p.id}>
-                    <NavLink to={`/detail/${p.slug}`} className="link">
+                    <NavLink to={`/detail/${p.id}`} className="link">
                       <div className="card">
                         <div className="itemsProfil">
                           <img src={p.img} alt="" />
@@ -325,7 +325,7 @@ const DetailPages = () => {
                               </div>
                             </div>
                             <div className="btnDemo">
-                              <NavLink to="/detail/123" className="link">
+                              <NavLink to={`/detail/${p.id}`} className="link">
                                 <button>
                                   <FaCartArrowDown />
                                 </button>

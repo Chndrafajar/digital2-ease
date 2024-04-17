@@ -21,7 +21,7 @@ const NewArrivals = () => {
           <div className="row">
             {Produk?.produk.slice(0, 4).map((p) => (
               <div className="col-sm-6 col-xl-3 col-lg-4 col-12" key={p.id}>
-                <NavLink to={`/detail/${p.slug}`} className="link">
+                <NavLink to={`/detail/${p.id}`} className="link">
                   <div className="card">
                     <div className="itemsProfil">
                       <img src={p.img} alt="" />
