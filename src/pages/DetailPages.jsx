@@ -1,4 +1,4 @@
-import { LandingPage, Produk, detailPages } from '../data';
+import { Produk, detailPages } from '../data';
 import React, { useRef, useState } from 'react';
 
 import { BiDollar, BiLogoPaypal, BiSolidCloudDownload, BiSolidStar } from 'react-icons/bi';
@@ -14,22 +14,23 @@ import '../assets/swiper.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Keyboard, Scrollbar, Navigation, Pagination } from 'swiper/modules';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { FaCartArrowDown, FaEye, FaHeart } from 'react-icons/fa';
 import { FaMessage } from 'react-icons/fa6';
 import MessageModal from '../components/MessageModal';
 import FormReview from '../components/FormReview';
 
 const DetailPages = () => {
+  const { id } = useParams();
+  const product = Produk.produk.find((p) => p.id === Number(id));
+
   return (
     <>
       <div className="detailPages">
         <div className="container">
           <div className="row">
             <div className="categoriesProduct">
-              <h3>
-                {detailPages.detail.categories} - {detailPages.detail.subCategories}
-              </h3>
+              <h3>{product?.categories}</h3>
               <div className="itemsIcons">
                 <div className="iconsShare" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <PiShareFatLight />
@@ -47,7 +48,7 @@ const DetailPages = () => {
             <div className="col-lg-7">
               <div className="card">
                 <div className="items">
-                  <img src={detailPages.detail.img} alt="" />
+                  <img src={product.img} alt="" />
                   <div className="iconsShare" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <PiShareFatLight />
                   </div>
@@ -126,14 +127,14 @@ const DetailPages = () => {
                   <h5>Price</h5>
                   <h4>
                     <BiDollar />
-                    {detailPages.detail.commercial}
+                    {product.commercial}
                   </h4>
                 </div>
-                <h1>{detailPages.detail.title}</h1>
+                <h1>{product.name}</h1>
                 <span>Choose License</span>
                 <select name="" id="">
-                  <option value="">Commercial ${detailPages.detail.commercial}</option>
-                  <option value="">Personal ${detailPages.detail.personal}</option>
+                  <option value="">Commercial ${product.commercial}</option>
+                  <option value="">Personal ${product.personal}</option>
                 </select>
 
                 <button className="add">Add To Cart</button>
@@ -143,10 +144,10 @@ const DetailPages = () => {
                 <div className="reviewDetail">
                   <span>Reviews</span>
                   <div className="items">
-                    {!isNaN(detailPages.detail.totalStars / detailPages.detail.starNumber) && (
+                    {!isNaN(product.totalStars / product.starNumber) && (
                       <>
                         <div className="stars">
-                          {Array(Math.round(detailPages.detail.totalStars / detailPages.detail.starNumber))
+                          {Array(Math.round(product.totalStars / product.starNumber))
                             .fill()
                             .map((item, i) => (
                               <BiSolidStar />
@@ -155,7 +156,7 @@ const DetailPages = () => {
                           <span> </span>
                         </div>
                         <div className="title">
-                          <span>{Math.round(detailPages.detail.totalStars / detailPages.detail.starNumber)} Reviews</span>
+                          <span>{Math.round(product.totalStars / product.starNumber)} Reviews</span>
                         </div>
                       </>
                     )}
@@ -164,7 +165,7 @@ const DetailPages = () => {
                 <div className="categories">
                   <h5>Categories</h5>
                   <h6>
-                    {detailPages.detail.categories} / {detailPages.detail.subCategories}
+                    {product.categories} / {product.subCategories}
                   </h6>
                 </div>
                 <div className="info">
@@ -258,26 +259,86 @@ const DetailPages = () => {
           <hr />
           <div className="row">
             <h3 style={{ marginBottom: '0px' }}>{detailPages.detail.starNumber} Review</h3>
+            <div className="col-lg-8">
+              {detailPages.reviews.map((r) => (
+                <div className="reveiw-item">
+                  <div className="info">
+                    <img src={r.imgUser} alt="" />
+                    <div className="name">
+                      <span>{r.nameUser}</span>
 
-            {detailPages.reviews.map((r) => (
-              <div className="col-md-12">
-                <div className="info">
-                  <img src={r.imgUser} alt="" />
-                  <div className="name">
-                    <span>{r.nameUser}</span>
-
-                    <div className="star">
-                      {Array(Math.round(r.totalStars))
-                        .fill()
-                        .map((item, i) => (
-                          <BiSolidStar />
-                        ))}
+                      <div className="star">
+                        {Array(Math.round(r.totalStars))
+                          .fill()
+                          .map((item, i) => (
+                            <BiSolidStar />
+                          ))}
+                      </div>
                     </div>
                   </div>
+                  <p>{r.comment}</p>
                 </div>
-                <p>{r.comment}</p>
+              ))}
+            </div>
+            <hr className="garis-produk" />
+            <div className="col-lg-4 ">
+              <div className="detail-product">
+                {Produk?.produk.slice(0, 4).map((p) => (
+                  <div className="card-detail-product" key={p.id}>
+                    <NavLink to={`/detail/${p.slug}`} className="link">
+                      <div className="card">
+                        <div className="itemsProfil">
+                          <img src={p.img} alt="" />
+                          <img src={p.imgToko} alt="" className="profil" />
+                          <div className="harga">
+                            <h5>${p.price}</h5>
+                          </div>
+                        </div>
+                        <div className="card-body">
+                          <div className="name">
+                            <h5> {p.name.substring(0, 26)}...</h5>
+                          </div>
+                          <NavLink to="/toko/123" className="by link">
+                            by <b>{p.nameToko}</b> in <b>{p.categories}</b>
+                          </NavLink>
+                          <div className="info">
+                            <div className="infoItems">
+                              <div className="infoSales">
+                                <div className="items">
+                                  {!isNaN(p.totalStars / p.starNumber) && (
+                                    <>
+                                      <div className="stars">
+                                        {Array(Math.round(p.totalStars / p.starNumber))
+                                          .fill()
+                                          .map((item, i) => (
+                                            <BiSolidStar />
+                                          ))}
+                                      </div>
+
+                                      <h6>({Math.round(p.totalStars / p.starNumber)})</h6>
+                                    </>
+                                  )}
+                                </div>
+                              </div>
+                              <div className="sales">
+                                <span>{p.sales} sales</span>
+                              </div>
+                            </div>
+                            <div className="btnDemo">
+                              <NavLink to="/detail/123" className="link">
+                                <button>
+                                  <FaCartArrowDown />
+                                </button>
+                              </NavLink>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </NavLink>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
           <hr />
           <FormReview />

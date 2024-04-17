@@ -80,7 +80,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms-condition" element={<TermsCondition />} />
-        <Route path="/detail/:slug" element={<DetailPages />} />
+        <Route path="/detail/:id" element={<DetailPages />} />
         <Route path="/toko/:slug" element={<TokoPages />} />
         <Route path="/toko/about" element={<TokoAbout />} />
         {/* dashboard  */}

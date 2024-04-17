@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoMdClose } from 'react-icons/io';
+import { FaAngleLeft } from 'react-icons/fa6';
 
 export default function CartPages() {
   return (
@@ -55,6 +56,11 @@ export default function CartPages() {
                 </button>
               </div>
             </div>
+            <button className="btn mt-2" style={{ background: '#0f486c', color: '#fff' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <FaAngleLeft /> <span>Keep Shooping</span>
+              </div>
+            </button>
           </div>
           <div className="col-lg-6">
             <div className="item-card-total">
@@ -69,7 +75,7 @@ export default function CartPages() {
                   <h6>$20</h6>
                 </div>
                 <button className="btn" style={{ background: '#0f486c', color: '#fff' }}>
-                  Continue
+                  Checkout
                 </button>
                 <div className="footer-cart">
                   <div className="icons-payment">

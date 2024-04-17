@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:wght@400;500;600&family=PT+Serif:wght@400;700&family=Playfair+Display:wght@400;500;600&family=Roboto+Mono:wght@400;500;600&family=Roboto+Slab:wght@400;500;600&display=swap');
-
+.card-detail-product,
 .col-sm-6,
 .col-lg-4,
 .col-xxl-3,
@@ -1341,6 +1341,9 @@ body::-webkit-scrollbar {
           }
         }
       }
+      .garis-produk {
+        display: none;
+      }
 
       h2 {
         margin-bottom: 50px;
@@ -1681,45 +1684,56 @@ body::-webkit-scrollbar {
           font-weight: 600;
         }
       }
+      .col-lg-4 {
+        margin-top: 15px;
 
-      .col-md-12 {
-        margin-bottom: 20px;
-        margin-top: 20px;
-        .info {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          img {
-            width: 50px;
-            border-radius: 50%;
-          }
-          .name {
-            span {
-              color: #000;
-              font-size: 18px;
-              font-style: normal;
-              font-weight: 600;
-              line-height: normal;
+        .detail-product {
+          overflow-x: auto;
+          height: 500px;
+        }
+        .detail-product::-webkit-scrollbar {
+          width: 0px;
+        }
+      }
+      .col-lg-8 {
+        .reveiw-item {
+          margin-top: 15px;
+          .info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            img {
+              width: 50px;
+              border-radius: 50%;
             }
-            .star {
-              display: flex;
-              gap: 3px;
+            .name {
+              span {
+                color: #000;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+              }
+              .star {
+                display: flex;
+                gap: 3px;
 
-              svg {
-                font-size: 16px;
-                color: orange;
+                svg {
+                  font-size: 16px;
+                  color: orange;
+                }
               }
             }
           }
-        }
-        p {
-          margin-top: 10px;
-          color: #000;
-          font-size: 16.5px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          width: 63%;
+          p {
+            margin-top: 10px;
+            color: #000;
+            font-size: 16.5px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            width: 100%;
+          }
         }
       }
       h3 {
@@ -2296,6 +2310,12 @@ body::-webkit-scrollbar {
   }
   .detailPages {
     margin-top: 140px;
+  }
+  .detailPages .container .row .garis-produk {
+    display: block;
+  }
+  .detailPages .container .row .col-lg-4 .detail-product {
+    height: auto;
   }
 
   .Popular {
