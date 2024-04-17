@@ -61,7 +61,7 @@ const NewArrivals = () => {
                           </div>
                         </div>
                         <div className="btnDemo">
-                          <NavLink to="/detail/123" className="link">
+                          <NavLink to={`/detail/${p.id}`} className="link">
                             <button>
                               <FaCartArrowDown />
                             </button>
